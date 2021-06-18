@@ -12,6 +12,7 @@ class CfgPatches {
 };
 
 class Mode_SemiAuto;
+class Mode_Burst;
 class Mode_FullAuto;
 
 class CfgWeapons 
@@ -21,6 +22,18 @@ class CfgWeapons
     class US85_M16_base : US85_weaponBase 
     {
         class Single: Mode_SemiAuto
+        {
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType
+            {
+                soundSetShot[] = {"jsrs_m16a4_shot_soundset", "jsrs_5x56mm_reverb_soundset"};
+            };
+            class SilencedSound: BaseSoundModeType
+            {
+                soundSetShot[] = {"jsrs_m16a4_shot_silenced_soundset", "jsrs_5x56mm_sd_reverb_soundset"};
+            };
+        };
+        class Burst: Mode_Burst
         {
             class BaseSoundModeType;
             class StandardSound: BaseSoundModeType
