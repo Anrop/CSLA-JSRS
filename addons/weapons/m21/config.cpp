@@ -18,7 +18,7 @@ class CfgWeapons
 {
     class US85_weaponBase;
     
-    class US85_M21_Base : US85_weaponBase 
+    class US85_M14_M21_Base : US85_weaponBase 
     {
         class Single: Mode_SemiAuto
         {
