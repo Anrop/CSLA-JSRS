@@ -23,23 +23,26 @@ class CfgWeapons
     {
         class Single: Mode_SemiAuto
         {
-            class StandardSound
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType
             {
                 soundSetShot[] = {"jsrs_fnfal_shot_soundset", "jsrs_7x62mm_reverb_soundset"};
             };
-        };
-        class Burst: Mode_Burst
-        {
-            class StandardSound
+            class SilencedSound: BaseSoundModeType
             {
-                soundSetShot[] = {"jsrs_fnfal_shot_soundset", "jsrs_7x62mm_reverb_soundset"};
+                soundSetShot[] = {"jsrs_fnfal_shot_silenced_soundset", "jsrs_7x62mm_sd_reverb_soundset"};
             };
         };
         class FullAuto: Mode_FullAuto
         {
-            class StandardSound
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType
             {
                 soundSetShot[] = {"jsrs_fnfal_shot_soundset", "jsrs_7x62mm_reverb_soundset"};
+            };
+            class SilencedSound: BaseSoundModeType
+            {
+                soundSetShot[] = {"jsrs_fnfal_shot_silenced_soundset", "jsrs_7x62mm_sd_reverb_soundset"};
             };
         };
     };
