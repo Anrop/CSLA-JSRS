@@ -11,27 +11,26 @@ class CfgPatches {
     };
 };
 
-class Mode_SemiAuto;
-class Mode_FullAuto;
-
 class CfgWeapons 
 {
-    class US85_MachinegunBase_7_62;
+    class US85_MachinegunBase_5_56;
+
+    class US85_MachinegunBase_7_62: US85_MachinegunBase_5_56 {
+        class manual;
+    };
     
     class US85_M60 : US85_MachinegunBase_7_62 
     {
-        class Single: Mode_SemiAuto
+        class manual: manual
         {
-            class StandardSound
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType
             {
-                soundSetShot[] = {"jsrs_m60e4_shot_soundset", "jsrs_7x62mm_reverb_soundset"};
+                soundSetShot[] = {"jsrs_m60e4_shot_soundset", "jsrs_7x62mm_reverb_soundset", "jsrs_gunner_casing"};
             };
-        };
-        class FullAuto: Mode_FullAuto
-        {
-            class StandardSound
+            class SilencedSound: BaseSoundModeType
             {
-                soundSetShot[] = {"jsrs_m60e4_shot_soundset", "jsrs_7x62mm_reverb_soundset"};
+                soundSetShot[] = {"jsrs_m60e4_shot_silenced_soundset", "jsrs_7x62mm_sd_reverb_soundset"};
             };
         };
     };
